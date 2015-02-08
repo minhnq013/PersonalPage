@@ -1,2 +1,2 @@
-node-debug D:\Projects\Git\PersonalPage\app
+node-debug --save-live-edit true app
 PAUSE

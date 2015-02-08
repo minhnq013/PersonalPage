@@ -1,18 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var HOME = GLOBAL.CONSTANTS.PATH.HOME;
 
+router.get('/partial/:name', function(req, res){
+	var name = req.params.name;
+	res.sendFile(HOME+'/public/partials/'+name+'/'+name+'.html');
+});
 /* GET home page. */
 router.get('/', function(req, res) {
-	res.render('index');
-});
-
-router.get('/view/:name', function(req, res){
-	var name = req.params.name;
-	res.render(name+'/'+name);
-});
-
-router.get('*',function(req, res){
-	res.redirect('/');
+	res.sendFile(HOME+'/public/index.html');
 });
 
 module.exports = router;
