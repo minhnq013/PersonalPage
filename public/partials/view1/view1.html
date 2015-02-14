@@ -1,1 +1,11 @@
-<p>This is the partial for view 1.</p>
+<div id="home">
+	<div class="mWidgetContainer" ng-repeat="widget in widgets">
+		<div class="header">
+			<span class="title" ng-bind="widget.name"></span>
+		</div>
+		<div class="body" ng-bind="widget.body">
+		</div>
+		<div class="footer">
+		</div>
+	</div>
+</div>
