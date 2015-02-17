@@ -6,8 +6,12 @@ router.get('/partial/:name', function(req, res){
 	var name = req.params.name;
 	res.sendFile(HOME+'/public/partials/'+name+'/'+name+'.html');
 });
+
+router.use('/getBusArrival', require('./buses'));
+
+
 /* GET home page. */
-router.get('/', function(req, res) {
+router.use('/', function(req, res) {
 	res.sendFile(HOME+'/public/index.html');
 });
 
