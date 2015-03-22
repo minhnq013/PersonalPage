@@ -7,10 +7,10 @@ var bodyParser = require('body-parser');
 var http = require('http');
 
 // Constanst
-GLOBAL.CONSTANTS = {
-	PATH: {
-		HOME: __dirname
-	},
+GLOBAL.FILE_DIRS = {
+	HOME: __dirname,
+    CONTROLLERS: __dirname + '/controllers',
+    MODELS: __dirname + '/models',
 };
 
 var app = express();
@@ -30,30 +30,14 @@ app.use(cookieParser());
 
 var router = require('./routes/router');
 
-// In order to disable auto-serving the index.html.
-// Place the static content register after routing.
-// This also prevent hitting hard drive frequently. Avoid bottle neck performance.
-app.use(router);
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/getBusArrival', function(req, res){
-    http.get("http://pugetsound.onebusaway.org/where/standard/stop.action?id=1_13240&showArrivals=true", 
-    function(response) {
-        var data = '';
-        response.on('data', function(chunk){
-            data += chunk;
-        });
-        response.on('end', function(){
-            if (response.statusCode === 200) { // Finish
-                res.statusCode = 200;
-                res.write(data);
-                res.end();
-            }
-        });
-    }).on('error', function(e) {
-        console.log("Got error: " + e.message);
-    });
+// Adding static to prevent from automatically hitting the hardrive everytime.
+app.use('/static', function(req, res){
+	req.url = '/static'+req.url;
+	express.static(path.join(__dirname, 'public'))(req,res);
 });
+// Router
+app.use(router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,32 +45,6 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-// if (app.get('env') === 'development') {
-//     app.use(function(err, req, res, next) {
-//         res.status(err.status || 500);
-//         res.render('error', {
-//             message: err.message,
-//             error: err
-//         });
-//     });
-// } else {
-//     // production error handler
-//     // no stacktraces leaked to user
-//     app.use(function(err, req, res, next) {
-//         res.status(err.status || 500);
-//         res.render('error', {
-//             message: err.message,
-//             error: {}
-//         });
-//     });
-// }
-
-
 
 app.listen(8989);
 console.log('Server on 8989');
