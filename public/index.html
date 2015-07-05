@@ -12,7 +12,6 @@
   <!-- Static resource need to have prefix "public".-->
   <link rel="stylesheet" href="/public/bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="/public/bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="/public/components/ng-table-master/ng-table.css">
   <link rel="stylesheet" href="/public/app.css">
   <script src="/public/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -26,21 +25,26 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+  <ng-view>
+  </ng-view>
 
   <div>Angular seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <script src="/public/bower_components/lodash/lodash.js"></script>
   <script src="/public/bower_components/angular/angular.js"></script>
   <script src="/public/bower_components/angular-route/angular-route.js"></script>
-  <script src="/public/app.js"></script>
-  <script src="/public/partials/view1/view1.js"></script>
-  <script src="/public/partials/view2/view2.js"></script>
+  <script src="/public/bower_components/angular-smart-table/dist/smart-table.js"></script>
+
   <script src="/public/components/version/version.js"></script>
   <script src="/public/components/version/version-directive.js"></script>
   <script src="/public/components/version/interpolate-filter.js"></script>
-  <script src="/public/components/ng-table-master/ng-table.js"></script>
+
+  <script src="/public/app.js"></script>
+  <script src="/public/partials/view1/view1.js"></script>
+  <script src="/public/partials/view2/view2.js"></script>
+  
 </body>
 </html>

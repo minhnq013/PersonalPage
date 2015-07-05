@@ -11,6 +11,7 @@
     "angular-loader": "*" ,
     "angular-mocks": "*" ,
     "html5-boilerplate": "~4.3.0",
-    "ng-table": "*" 
+	"angular-smart-table": "*",
+	"lodash": "*"
   }
 }

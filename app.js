@@ -30,8 +30,6 @@ app.use(cookieParser());
 
 var router = require('./routes/router');
 
-// Use public as route path to prevent from automatically hitting the hardrive everytime.
-app.use('/public', express.static(__dirname));
 // Router
 app.use(router);
 

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var cheerio = require('cheerio');
+var jquery = require('jquery');
 var http = require('http');
 var Promise = require('bluebird');    // Promise
 
@@ -56,15 +56,19 @@ function onError(e){
 
 function parseHtml(html) {
     var schedules = [];
-    var $ = cheerio.load(html);
-    // Get address title.
-    var address = $('head title').text();
-    var arrivalRows = $('table.arrivalsTable').find('.arrivalsRow');
-    arrivalRows.each(function(index, row) {
+    var $page = jquery(html);
+
+    var $arrivalRows = jquery('table.arrivalsTable').find('.arrivalsRow');
+
+    $arrivalRows.each(function(index, $row) {
+
+        console.log($row.find('.arrivalsStopAddress').text());
         schedules.push({
-            'busNumber' : $(row).find($('.arrivalsRouteEntry')).text(),
-            'arriveDescription' : $(row).find($('.arrivalsDescriptionEntry')).text(),
-            'arriveStatus' : $(row).find($('.arrivalsStatusEntry')).text()
+            busNumber : $row.find('.arrivalsRouteEntry').text(),
+            arrivalsStopAddress: $row.find('.arrivalsStopAddress').text(),
+            arrivalsDestination : $row.find('.arrivalsDestinationEntry').text(),
+            arrivalsTime: $row.find('.arrivalsTimeEntry').text(),
+            arrivalsStatus: $row.find('.arrivalsStatusEntry').text()
         });
     });
     return schedules;
@@ -74,4 +78,4 @@ module.exports = router;
 
 
 
-
+
