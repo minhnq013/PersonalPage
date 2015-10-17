@@ -8,13 +8,13 @@ router.use('/public', express.static(FILE_DIRS.HOME + '/public'));
 // Template routing
 router.get('/partial/:name', function(req, res){
 	var name = req.params.name;
-	res.sendFile(FILE_DIRS.HOME+'/public/partials/'+name+'/'+name+'.html');
+	res.sendFile(FILE_DIRS.HOME+'/public/modules/'+name+'/'+name+'.html');
 });
 
-// BUs module
-router.use('/bus', require(FILE_DIRS.CONTROLLERS+'/bus'));
+// Bus module route
+router.use(require(FILE_DIRS.CONTROLLERS+'/busStops.controller'));
 
-// If public, then the client was request a non-existing static resource.
+// If public, then the client was requesting a non-existing static resource.
 router.use('/public', function(req, res){
 	console.log(req.url, 'Unknown resource');
 	res.statusCode = 404;

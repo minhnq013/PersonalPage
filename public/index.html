@@ -10,10 +10,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Static resource need to have prefix "public".-->
-  <link rel="stylesheet" href="/public/bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="/public/bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="/public/app.css">
-  <script src="/public/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
   <ul class="menu">
@@ -21,20 +18,14 @@
     <li><a href="#/view2">view2</a></li>
   </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
   <ng-view>
   </ng-view>
 
   <div>Angular seed app: v<span app-version></span></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="/public/bower_components/lodash/lodash.js"></script>
   <script src="/public/bower_components/angular/angular.js"></script>
+  <script src="/public/bower_components/restangular/dist/restangular.js"></script>
   <script src="/public/bower_components/angular-route/angular-route.js"></script>
   <script src="/public/bower_components/angular-smart-table/dist/smart-table.js"></script>
 
@@ -43,8 +34,11 @@
   <script src="/public/components/version/interpolate-filter.js"></script>
 
   <script src="/public/app.js"></script>
-  <script src="/public/partials/view1/view1.js"></script>
-  <script src="/public/partials/view2/view2.js"></script>
+  <script src="/public/rest/app.rest.js"></script>
+  <script src="/public/rest/restAngularInterceptor/busStop.rest.js"></script>
+  <script src="/public/core/app.core.js"></script>
+  <script src="/public/modules/view1/view1.js"></script>
+  <script src="/public/modules/view2/view2.js"></script>
   
 </body>
 </html>

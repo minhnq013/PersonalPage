@@ -10,7 +10,7 @@ var http = require('http');
 GLOBAL.FILE_DIRS = {
 	HOME: __dirname,
     CONTROLLERS: __dirname + '/controllers',
-    MODELS: __dirname + '/models',
+    MODELS: __dirname + '/models'
 };
 
 var app = express();

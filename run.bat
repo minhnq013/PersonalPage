@@ -1,2 +1,2 @@
-node-debug --save-live-edit true app
+node-debug --save-live-edit true app.js
 PAUSE

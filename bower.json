@@ -8,10 +8,9 @@
   "dependencies": {
     "angular": "*" ,
     "angular-route": "*" ,
-    "angular-loader": "*" ,
     "angular-mocks": "*" ,
-    "html5-boilerplate": "~4.3.0",
 	"angular-smart-table": "*",
-	"lodash": "*"
+	"lodash": "*",
+	"restangular": "*"
   }
 }

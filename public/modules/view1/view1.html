@@ -1,0 +1,24 @@
+<div >
+	Bus Schedule
+	<div ng-repeat="stop in ctrl.busStops">
+		<div>
+			<span ng-bind="::stop.address"></span>
+		</div>
+		<table st-table="data" class="bus-schedule-table" border=1>
+			<thead>
+			<tr>
+				<td>Bus Number</td>
+				<td>Arrivals Time</td>
+				<td>Arrivals Status</td>
+				<td>Destination</td>
+			</tr>
+			</thead>
+			<tr ng-repeat="schedule in stop.schedules">
+				<td>{{schedule.busNumber}}</td>
+				<td>{{schedule.arrivalTime}}</td>
+				<td>{{schedule.arrivalStatus}}</td>
+				<td>{{schedule.busDestination}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
