@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module(CONST.APP_PREFIX + 'view1', ['ngRoute', 'smart-table', CONST.APP_PREFIX+'core', 'restangular'])
+angular.module(CONST.APP_PREFIX + 'view1', ['ngRoute', CONST.APP_PREFIX+'core', 'restangular'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view1', {

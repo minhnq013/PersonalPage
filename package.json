@@ -15,6 +15,7 @@
     "jade": "*",
 	"bluebird": "*",
 	"cheerio": "*",
-	"lodash": "*"
+	"lodash": "*",
+    "nedb": "*"
   }
 }

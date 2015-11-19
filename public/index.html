@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Static resource need to have prefix "public".-->
-  <link rel="stylesheet" href="/public/app.css">
+    <meta charset="utf-8"/>
+    <title>My AngularJS App</title>
+    <!-- Static resource need to have prefix "public".-->
+    <link rel="stylesheet" href="/public/app.css"/>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
 </head>
 <body>
-  <ul class="menu">
+<ul class="menu">
     <li><a href="#/view1">Bus Schedule</a></li>
     <li><a href="#/view2">view2</a></li>
-  </ul>
+</ul>
 
-  <ng-view>
-  </ng-view>
+<ng-view>
+</ng-view>
 
-  <div>Angular seed app: v<span app-version></span></div>
+<script src="/public/bower_components/lodash/lodash.js"></script>
+<script src="/public/bower_components/angular/angular.js"></script>
+<script src="/public/bower_components/restangular/dist/restangular.js"></script>
+<script src="/public/bower_components/angular-route/angular-route.js"></script>
 
-  <script src="/public/bower_components/lodash/lodash.js"></script>
-  <script src="/public/bower_components/angular/angular.js"></script>
-  <script src="/public/bower_components/restangular/dist/restangular.js"></script>
-  <script src="/public/bower_components/angular-route/angular-route.js"></script>
-  <script src="/public/bower_components/angular-smart-table/dist/smart-table.js"></script>
+<script src="/public/app.js"></script>
+<script src="/public/rest/app.rest.js"></script>
+<script src="/public/rest/restAngularInterceptor/busStop.rest.js"></script>
+<script src="/public/core/app.core.js"></script>
+<script src="/public/modules/view1/view1.js"></script>
+<script src="/public/modules/view2/view2.js"></script>
 
-  <script src="/public/components/version/version.js"></script>
-  <script src="/public/components/version/version-directive.js"></script>
-  <script src="/public/components/version/interpolate-filter.js"></script>
-
-  <script src="/public/app.js"></script>
-  <script src="/public/rest/app.rest.js"></script>
-  <script src="/public/rest/restAngularInterceptor/busStop.rest.js"></script>
-  <script src="/public/core/app.core.js"></script>
-  <script src="/public/modules/view1/view1.js"></script>
-  <script src="/public/modules/view2/view2.js"></script>
-  
 </body>
 </html>

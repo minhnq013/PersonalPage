@@ -10,4 +10,8 @@ angular.module(CONST.APP_PREFIX + 'rest', ['restangular'])
                     return busStopsInterceptor.intercept(data, operation);
             }
         });
+
+        Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
+            // TODO: IMplement error handling
+        });
     }]);
