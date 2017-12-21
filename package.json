@@ -13,9 +13,9 @@
     "serve-favicon": "*",
     "debug": "*",
     "jade": "*",
-	"bluebird": "*",
-	"cheerio": "*",
-	"lodash": "*",
+    "bluebird": "*",
+    "cheerio": "*",
+    "lodash": "*",
     "nedb": "*"
   }
 }
